@@ -1,0 +1,36 @@
+stem,day,time_point,time_order,camera,camera_token,background,run,scan,leaf_no,n_pixels,n_pixels_full,centroid_row,centroid_col,bbox_min_row,bbox_min_col,bbox_max_row,bbox_max_col,touching,ndvi_threshold,expected_n,count_mismatch,experiment,unit,group,include,notes,infected
+0dai_bi_visnir_bc_run2_1,0,bi,0,vnir,visnir,bc,2,1.0,1,53695,56655,261.35933280381255,310.48724737445946,113,58,373,505,False,0.65,,False,2,,,0,include=0 because unit/group unknown (leaf count != n_units; not guessed),0
+0dai_bi_visnir_bc_run2_1,0,bi,0,vnir,visnir,bc,2,1.0,2,63246,65435,488.66634064338655,359.4442423779323,371,100,600,588,False,0.65,,False,2,,,0,include=0 because unit/group unknown (leaf count != n_units; not guessed),0
+0dai_bi_visnir_bc_run2_1,0,bi,0,vnir,visnir,bc,2,1.0,3,58763,61070,727.3705747502866,349.1246929752743,610,118,871,565,False,0.65,,False,2,,,0,include=0 because unit/group unknown (leaf count != n_units; not guessed),0
+0dai_bi_visnir_bc_run2_1,0,bi,0,vnir,visnir,bc,2,1.0,4,70613,73136,1007.4738979435572,399.4286808138263,853,217,1190,573,False,0.65,,False,2,,,0,include=0 because unit/group unknown (leaf count != n_units; not guessed),0
+0dai_bi_visnir_bc_run2_1,0,bi,0,vnir,visnir,bc,2,1.0,5,3754,4519,1175.2982960832041,476.96415136092054,1155,368,1190,555,False,0.65,,False,2,,,0,include=0 because unit/group unknown (leaf count != n_units; not guessed),0
+0dai_2hr_visnir_bc_run2-1,0,2hr,1,vnir,visnir,bc,2,1.0,1,37751,39425,278.2102219403931,402.3789980976538,186,241,370,553,False,0.5184904336929321,,False,2,,,0,include=0 because unit/group unknown (leaf count != n_units; not guessed),0
+0dai_2hr_visnir_bc_run2-1,0,2hr,1,vnir,visnir,bc,2,1.0,2,76188,78412,544.0224965566495,417.3055909809723,394,147,666,645,False,0.5184904336929321,,False,2,,,0,include=0 because unit/group unknown (leaf count != n_units; not guessed),0
+0dai_2hr_visnir_bc_run2-1,0,2hr,1,vnir,visnir,bc,2,1.0,3,40922,42933,783.6044068665129,416.7132974634896,670,175,865,620,False,0.5184904336929321,,False,2,,,0,include=0 because unit/group unknown (leaf count != n_units; not guessed),0
+0dai_2hr_visnir_bc_run2-1,0,2hr,1,vnir,visnir,bc,2,1.0,4,33476,35123,996.2303903425106,364.70327136064685,908,175,1088,544,False,0.5184904336929321,,False,2,,,0,include=0 because unit/group unknown (leaf count != n_units; not guessed),0
+0dai_2hr_visnir_bc_run2-1,0,2hr,1,vnir,visnir,bc,2,1.0,5,42326,44398,1193.9710122077572,313.8136177305284,1067,60,1292,511,False,0.5184904336929321,,False,2,,,0,include=0 because unit/group unknown (leaf count != n_units; not guessed),0
+0dai_2hr_visnir_bc_run2-1,0,2hr,1,vnir,visnir,bc,2,1.0,6,41156,43039,1401.250400799275,274.3088361718441,1295,41,1490,444,False,0.5184904336929321,,False,2,,,0,include=0 because unit/group unknown (leaf count != n_units; not guessed),0
+1dai_visnir_bc_run1,1,d1,2,vnir,visnir,bc,1,,1,10983,12364,64.06470397929472,441.1416208346813,40,268,96,605,False,0.65,,False,1,1.0,control,1,"assumed order, unconfirmed",0
+1dai_visnir_bc_run1,1,d1,2,vnir,visnir,bc,1,,2,10648,11940,133.59698492462311,407.843216080402,97,273,163,571,False,0.65,,False,1,2.0,control,1,"assumed order, unconfirmed",0
+1dai_visnir_bc_run1,1,d1,2,vnir,visnir,bc,1,,3,27643,29606,220.82716341282173,427.8669188677971,173,227,283,680,False,0.65,,False,1,3.0,inoculated,1,"assumed order, unconfirmed",1
+1dai_visnir_bc_run1,1,d1,2,vnir,visnir,bc,1,,4,19569,21059,345.4815043449357,460.14112730898904,306,283,385,652,False,0.65,,False,1,4.0,inoculated,1,"assumed order, unconfirmed",1
+1dai_visnir_bc_run1,1,d1,2,vnir,visnir,bc,1,,5,25316,26917,454.50603707694023,476.74087008210427,395,309,522,677,False,0.65,,False,1,5.0,control,1,"assumed order, unconfirmed",0
+1dai_visnir_bc_run1,1,d1,2,vnir,visnir,bc,1,,6,8836,9886,570.2290107222335,444.03115516892575,527,329,616,579,False,0.65,,False,1,6.0,control,1,"assumed order, unconfirmed",0
+1dai_visnir_bc_run1,1,d1,2,vnir,visnir,bc,1,,7,13976,15217,649.2230400210291,466.7772885588487,606,314,690,615,False,0.65,,False,1,7.0,inoculated,1,"assumed order, unconfirmed",1
+1dai_visnir_bc_run1,1,d1,2,vnir,visnir,bc,1,,8,16303,17677,744.2396334219608,472.53860949256097,702,313,790,636,False,0.65,,False,1,8.0,inoculated,1,"assumed order, unconfirmed",1
+2dai_visnir_bc_run1,2,d2,3,vnir,visnir,bc,1,,1,16841,18469,111.48069738480697,271.17900265309436,76,50,150,453,False,0.65,,False,1,1.0,control,1,"assumed order, unconfirmed",0
+2dai_visnir_bc_run1,2,d2,3,vnir,visnir,bc,1,,2,11902,13225,204.12340264650283,288.0201134215501,172,118,234,442,False,0.65,,False,1,2.0,control,1,"assumed order, unconfirmed",0
+2dai_visnir_bc_run1,2,d2,3,vnir,visnir,bc,1,,3,18897,20625,305.8693333333333,331.6061090909091,269,95,349,519,False,0.65,,False,1,3.0,inoculated,1,"assumed order, unconfirmed",1
+2dai_visnir_bc_run1,2,d2,3,vnir,visnir,bc,1,,4,16920,18405,408.15827220863895,338.225536538984,375,162,444,504,False,0.65,,False,1,4.0,inoculated,1,"assumed order, unconfirmed",1
+2dai_visnir_bc_run1,2,d2,3,vnir,visnir,bc,1,,5,15106,16428,523.226442658875,334.34033357682006,485,160,559,479,False,0.65,,False,1,5.0,control,1,"assumed order, unconfirmed",0
+2dai_visnir_bc_run1,2,d2,3,vnir,visnir,bc,1,,6,20887,22700,627.9626431718061,364.8777092511013,574,124,690,521,False,0.65,,False,1,6.0,control,1,"assumed order, unconfirmed",0
+2dai_visnir_bc_run1,2,d2,3,vnir,visnir,bc,1,,7,12415,13667,728.7197629326114,374.94058681495574,697,220,762,528,False,0.65,,False,1,7.0,inoculated,1,"assumed order, unconfirmed",1
+2dai_visnir_bc_run1,2,d2,3,vnir,visnir,bc,1,,8,17284,19080,818.8177672955975,371.93459119496856,777,159,865,538,False,0.65,,False,1,8.0,inoculated,1,"assumed order, unconfirmed",1
+3dai_visnir_bc_run1,3,d3,4,vnir,visnir,bc,1,,1,12179,13369,114.1202782556661,448.7100007479991,81,292,146,587,False,0.65,,False,1,1.0,control,1,"assumed order, unconfirmed",0
+3dai_visnir_bc_run1,3,d3,4,vnir,visnir,bc,1,,2,11171,12365,189.50537808329963,464.0897695107157,160,310,224,609,False,0.65,,False,1,2.0,control,1,"assumed order, unconfirmed",0
+3dai_visnir_bc_run1,3,d3,4,vnir,visnir,bc,1,,3,14817,16232,270.79213898472153,457.1090438639724,235,281,309,623,False,0.65,,False,1,3.0,inoculated,1,"assumed order, unconfirmed",1
+3dai_visnir_bc_run1,3,d3,4,vnir,visnir,bc,1,,4,10663,12050,363.0341908713693,444.07809128630703,319,294,404,606,False,0.65,,False,1,4.0,inoculated,1,"assumed order, unconfirmed",1
+3dai_visnir_bc_run1,3,d3,4,vnir,visnir,bc,1,,5,23073,24868,474.7680955444748,469.37015441531287,431,239,526,660,False,0.65,,False,1,5.0,control,1,"assumed order, unconfirmed",0
+3dai_visnir_bc_run1,3,d3,4,vnir,visnir,bc,1,,6,10906,12047,560.5596414044991,436.3414127998672,530,280,596,561,False,0.65,,False,1,6.0,control,1,"assumed order, unconfirmed",0
+3dai_visnir_bc_run1,3,d3,4,vnir,visnir,bc,1,,7,20163,21892,657.9492051891102,432.17047323223096,612,219,705,609,False,0.65,,False,1,7.0,inoculated,1,"assumed order, unconfirmed",1
+3dai_visnir_bc_run1,3,d3,4,vnir,visnir,bc,1,,8,11144,12366,754.1179847970241,421.4921559113699,724,255,788,554,False,0.65,,False,1,8.0,inoculated,1,"assumed order, unconfirmed",1

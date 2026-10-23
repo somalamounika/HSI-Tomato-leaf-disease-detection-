@@ -1,0 +1,6 @@
+time_point,n,n_inoculated,n_control,auc_p_infected,auc_atypical_pct
+bi,5,0,5,,
+2hr,6,0,6,,
+d1,8,4,4,0.5625,0.4375
+d2,8,4,4,0.4375,0.75
+d3,8,4,4,0.4375,0.5625

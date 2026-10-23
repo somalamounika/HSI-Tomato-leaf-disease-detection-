@@ -1,0 +1,1 @@
+WARNING: leaf order within each scan is UNCONFIRMED. The leaf_map must be checked against the dataset's own metadata or confirmed with the dataset authors (Song Li, songli@vt.edu). Do not treat assumed unit/group labels as ground truth.

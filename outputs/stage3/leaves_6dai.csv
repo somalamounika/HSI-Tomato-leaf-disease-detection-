@@ -1,0 +1,11 @@
+stem,day,time_point,time_order,camera,camera_token,background,run,scan,leaf_no,n_pixels,n_pixels_full,centroid_row,centroid_col,bbox_min_row,bbox_min_col,bbox_max_row,bbox_max_col,touching,ndvi_threshold,expected_n,count_mismatch
+6dai_visnir_bc_run1,6,d6,7,vnir,visnir,bc,1,,1,29482,32197,177.16576078516633,298.08106345311677,101,99,272,450,True,0.65,,False
+6dai_visnir_bc_run1,6,d6,7,vnir,visnir,bc,1,,2,12445,13595,304.86495034939315,337.98065465244576,272,187,349,460,True,0.65,,False
+6dai_visnir_bc_run1,6,d6,7,vnir,visnir,bc,1,,3,11035,12314,373.8578041253857,298.8707162579178,342,118,413,420,True,0.65,,False
+6dai_visnir_bc_run1,6,d6,7,vnir,visnir,bc,1,,4,8339,9374,437.80008534243655,329.5768081928739,410,190,472,447,True,0.65,,False
+6dai_visnir_bc_run1,6,d6,7,vnir,visnir,bc,1,,5,12395,13645,496.45628435324295,289.0867717112495,454,143,547,419,True,0.65,,False
+6dai_visnir_bc_run1,6,d6,7,vnir,visnir,bc,1,,6,8071,9198,578.3734507501631,315.70482713633396,549,164,605,437,True,0.65,,False
+6dai_visnir_bc_run1,6,d6,7,vnir,visnir,bc,1,,7,21825,23565,645.9710163377891,339.59206450244005,606,120,691,532,True,0.65,,False
+6dai_visnir_bc_run1,6,d6,7,vnir,visnir,bc,1,,8,40173,43179,794.8514787280855,352.9765163621205,703,155,893,514,False,0.65,,False
+6dai_visnir_bc_run1,6,d6,7,vnir,visnir,bc,1,,9,2578,3102,918.2885235332044,393.9880722114765,899,329,937,459,False,0.65,,False
+6dai_visnir_bc_run1,6,d6,7,vnir,visnir,bc,1,,10,19196,20953,996.9226363766525,398.950937813201,953,170,1048,577,False,0.65,,False

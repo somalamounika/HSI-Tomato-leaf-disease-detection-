@@ -1,0 +1,36 @@
+stem,leaf_no,experiment,unit,group,include,notes
+0dai_bi_visnir_bc_run2_1,1,2,,,0,include=0 because unit/group unknown (leaf count != n_units; not guessed)
+0dai_bi_visnir_bc_run2_1,2,2,,,0,include=0 because unit/group unknown (leaf count != n_units; not guessed)
+0dai_bi_visnir_bc_run2_1,3,2,,,0,include=0 because unit/group unknown (leaf count != n_units; not guessed)
+0dai_bi_visnir_bc_run2_1,4,2,,,0,include=0 because unit/group unknown (leaf count != n_units; not guessed)
+0dai_bi_visnir_bc_run2_1,5,2,,,0,include=0 because unit/group unknown (leaf count != n_units; not guessed)
+0dai_2hr_visnir_bc_run2-1,1,2,,,0,include=0 because unit/group unknown (leaf count != n_units; not guessed)
+0dai_2hr_visnir_bc_run2-1,2,2,,,0,include=0 because unit/group unknown (leaf count != n_units; not guessed)
+0dai_2hr_visnir_bc_run2-1,3,2,,,0,include=0 because unit/group unknown (leaf count != n_units; not guessed)
+0dai_2hr_visnir_bc_run2-1,4,2,,,0,include=0 because unit/group unknown (leaf count != n_units; not guessed)
+0dai_2hr_visnir_bc_run2-1,5,2,,,0,include=0 because unit/group unknown (leaf count != n_units; not guessed)
+0dai_2hr_visnir_bc_run2-1,6,2,,,0,include=0 because unit/group unknown (leaf count != n_units; not guessed)
+1dai_visnir_bc_run1,1,1,1.0,control,1,"assumed order, unconfirmed"
+1dai_visnir_bc_run1,2,1,2.0,control,1,"assumed order, unconfirmed"
+1dai_visnir_bc_run1,3,1,3.0,inoculated,1,"assumed order, unconfirmed"
+1dai_visnir_bc_run1,4,1,4.0,inoculated,1,"assumed order, unconfirmed"
+1dai_visnir_bc_run1,5,1,5.0,control,1,"assumed order, unconfirmed"
+1dai_visnir_bc_run1,6,1,6.0,control,1,"assumed order, unconfirmed"
+1dai_visnir_bc_run1,7,1,7.0,inoculated,1,"assumed order, unconfirmed"
+1dai_visnir_bc_run1,8,1,8.0,inoculated,1,"assumed order, unconfirmed"
+2dai_visnir_bc_run1,1,1,1.0,control,1,"assumed order, unconfirmed"
+2dai_visnir_bc_run1,2,1,2.0,control,1,"assumed order, unconfirmed"
+2dai_visnir_bc_run1,3,1,3.0,inoculated,1,"assumed order, unconfirmed"
+2dai_visnir_bc_run1,4,1,4.0,inoculated,1,"assumed order, unconfirmed"
+2dai_visnir_bc_run1,5,1,5.0,control,1,"assumed order, unconfirmed"
+2dai_visnir_bc_run1,6,1,6.0,control,1,"assumed order, unconfirmed"
+2dai_visnir_bc_run1,7,1,7.0,inoculated,1,"assumed order, unconfirmed"
+2dai_visnir_bc_run1,8,1,8.0,inoculated,1,"assumed order, unconfirmed"
+3dai_visnir_bc_run1,1,1,1.0,control,1,"assumed order, unconfirmed"
+3dai_visnir_bc_run1,2,1,2.0,control,1,"assumed order, unconfirmed"
+3dai_visnir_bc_run1,3,1,3.0,inoculated,1,"assumed order, unconfirmed"
+3dai_visnir_bc_run1,4,1,4.0,inoculated,1,"assumed order, unconfirmed"
+3dai_visnir_bc_run1,5,1,5.0,control,1,"assumed order, unconfirmed"
+3dai_visnir_bc_run1,6,1,6.0,control,1,"assumed order, unconfirmed"
+3dai_visnir_bc_run1,7,1,7.0,inoculated,1,"assumed order, unconfirmed"
+3dai_visnir_bc_run1,8,1,8.0,inoculated,1,"assumed order, unconfirmed"

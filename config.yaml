@@ -1,0 +1,191 @@
+# Tomato BLS (bacterial leaf spot) — VNIR days 0–3 pipeline
+# All paths, wavelengths, thresholds and mappings live here. No magic numbers in code.
+
+project_name: tomato_bls
+random_seed: 42
+log_level: INFO
+
+paths:
+  data_dir: data/raw
+  leaf_map: data/leaf_map.csv
+  expected_leaves_file: data/expected_leaves.csv   # optional; missing file is OK
+  output_dir: outputs
+  inventory: outputs/inventory.csv
+  overlays_dir: outputs/overlays
+  cache_dir: outputs/cache
+  leaves: outputs/leaves.csv
+  features: outputs/features.csv
+  figures_dir: outputs/figures
+  models_dir: outputs/models
+  reports_dir: outputs/reports
+
+# Scope: VNIR black-cloth scans, pre-symptomatic time points only.
+# Any other camera, background, or later day is skipped (never loaded / trained / analysed).
+filters:
+  camera: vnir
+  background: bc
+  allowed_time_points: [bi, 2hr, d1, d2, d3]
+  max_time_order: 4          # bi=0, 2hr=1, d1=2, d2=3, d3=4
+  expected_vnir_bands: 300
+
+# Filename token → camera name used in filters / inventory.
+camera_map:
+  visnir: vnir
+  swir: swir
+
+# Time-order rule (not a data guess): bi=0, 2hr=1, dN = N+1.
+time_order:
+  bi: 0
+  2hr: 1
+  day_offset: 1              # time_order(dN) = N + day_offset
+
+wavelengths:
+  trim_min_nm: 400.0
+  trim_max_nm: 1000.0
+  rgb_nm: [650.0, 550.0, 470.0]    # R, G, B for false colour
+  ndvi: [800.0, 670.0]
+  gndvi: [800.0, 550.0]
+  ndre: [790.0, 720.0]
+  pri: [531.0, 570.0]
+  pssra: [800.0, 680.0]
+  ctr2: [695.0, 760.0]
+  sipi: [800.0, 445.0, 680.0]
+  mnd705: [750.0, 705.0, 445.0]
+  msr705: [750.0, 445.0, 705.0]
+  ari: [550.0, 700.0]
+  rep: [670.0, 780.0, 700.0, 740.0]   # R670, R780, R700, R740; 700 + 40*((R670+R780)/2 - R700)/(R740-R700)
+  wi: [900.0, 970.0]
+  red_edge_deriv: [680.0, 760.0]
+
+band:
+  half_width: 2               # mean of bands within ±2 indices of the nearest wavelength
+
+io:
+  cube_dtype: float16
+  use_header_reflectance_scale: true
+  fallback_reflectance_scale: 10000.0
+  rgb_percentile: 99.0
+  preview_central_frac: 0.25  # central crop for the loader QC print
+  preview_top_ndvi_pixels: 1000
+  # ENVI data type codes: 1=uint8, 2=int16, 3=int32, 4=float32, 5=float64, 12=uint16
+  envi_dtype_names:
+    1: uint8
+    2: int16
+    3: int32
+    4: float32
+    5: float64
+    12: uint16
+
+# Crop margins are starting values for non-cloth strips (side reflectance bars,
+# top/bottom reference bars). Adjust after inspecting overlays; they are not
+# measured from the paper. Components that still touch the cropped edge are dropped.
+segmentation:
+  ndvi_otsu_floor: 0.3
+  ndvi_otsu_cap: 0.65
+  # Black cotton (bc) is NIR-bright, so cloth NDVI ≈ leaf NDVI (~0.8) and NDVI
+  # alone cannot find leaves. Gate on the green band first (cloth ~0.03, leaf ~0.1–0.3),
+  # then apply NDVI > Otsu on the remaining pixels. All thresholds are config.
+  green_gate:
+    enabled: true
+    band_nm: 550.0
+    otsu_floor: 0.05
+  crop_margins:
+    top: 40
+    bottom: 10
+    left: 40
+    right: 30
+  drop_bright_rows:
+    enabled: true
+    band_nm: 650.0
+    min_mean_reflectance: 0.25
+  opening_radius_px: 3
+  min_leaf_area: 2500
+  max_component_frac: 0.20    # drop blobs larger than this fraction of the image
+  edge_erosion_px: 2
+  row_tolerance_px: 40
+  discard_edge_touching: true
+  keep_edge_leaf_min_ndvi: 0.4
+  touch_dilate_px: 3
+  use_sam2: false
+  overlay_dpi: 120
+  overlay_fontsize: 18
+  cache_dtype: float16
+  max_cache_pixels: 150000    # skip writing a component this large (safety for disk)
+
+
+# Mapping run → experiment is UNCONFIRMED. "run" in the filename may be the
+# experiment number, a scan batch, or something else. Change this table only
+# when the dataset metadata or the authors confirm it.
+run_to_experiment:
+  1: 1
+  2: 2
+
+# Unit → group table from Zhang, Vinatzer & Li 2024 (experimental design).
+# Unit numbers repeat across experiments; always read experiment and unit together.
+experiments:
+  1:
+    n_units: 8
+    control: [1, 2, 5, 6]
+    inoculated: [3, 4, 7, 8]
+  2:
+    n_units: 10
+    control: [1, 2, 3, 4, 5]
+    inoculated: [6, 7, 8, 9, 10]
+
+allowed_groups: [control, inoculated]
+
+# Training time points (bi is never used for training).
+training:
+  time_points: [2hr, d1, d2, d3]
+  exclude_time_points: [bi]
+  require_both_groups_per_scan: true
+  require_group_on_included: true
+
+features:
+  spectrum_step_nm: 5.0
+  spectrum_norm: none         # none | snv
+  include_downsampled_spectrum: false   # if true, R_<nm> columns go into the leaf model
+  ndvi_low_threshold: 0.5     # fraction of eroded pixels with NDVI below this
+  savgol_window: 11
+  savgol_polyorder: 3
+  eps: 1.0e-8
+
+models:
+  lightgbm:
+    num_leaves: 7
+    min_child_samples: 5
+    n_estimators: 300
+    learning_rate: 0.03
+    subsample: 0.8
+    colsample_bytree: 0.5
+    max_depth: 3
+    objective: binary
+    verbosity: -1
+  logistic:
+    C: 1.0
+    penalty: l2
+    max_iter: 2000
+  lda:
+    solver: lsqr
+    shrinkage: auto
+  n_permutations: 200
+  bi_auc_warn: 0.65
+  n_bootstrap: 1000
+  probability_threshold: 0.5
+
+# Model selection: highest out-of-fold balanced accuracy; ties → simpler model.
+model_tie_order: [logistic_regression, lda, lightgbm]
+
+anomaly:
+  n_components: 10
+  n_ref_pixels: 200000
+  distance_percentile: 99.0
+  leave_one_unit_out_reference: true
+  heatmap_cmap: inferno
+  snv_pixels: true
+
+spread:
+  n_bootstrap: 1000
+
+ui:
+  default_threshold: 0.5
